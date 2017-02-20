@@ -5,10 +5,10 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/build/")
 
 
 # dependencies
+find_package(LinuxHeaders REQUIRED)
 find_package(DRM REQUIRED)
 
-# ignored...
-include_directories(${DRM_INCLUDE_DIRS})
+include_directories(${KERNELHEADERS_INCLUDE_DIRS})
 
 # workaround because cmake ignores include paths
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -I${DRM_INCLUDE_DIRS}")
